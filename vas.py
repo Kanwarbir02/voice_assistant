@@ -12,12 +12,14 @@ def speak(audio):
 
 def greet():
     currentHour = int(datetime.datetime.now().hour)
-    if currentHour>0 and currentHour<12:
+    if currentHour>4 and currentHour<12:
         speak("Good Morning Sir!")
-    elif currentHour>12 and currentHour<16:
+    elif currentHour>=12 and currentHour<16:
         speak("Good Afternoon Sir!")    
-    else:
+    elif currentHour>=16 and currentHour<=17:
         speak("Good Evening Sir!")
+    else:
+        speak("Greetings Sir!")    
 
     speak("How may I help you?")
 

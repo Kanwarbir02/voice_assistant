@@ -2,8 +2,15 @@ import pyttsx3
 import speech_recognition as sr
 import datetime
 import wikipedia
+from selenium import webdriver
+import webbrowser
 
 engine = pyttsx3.init()
+
+
+
+
+
 
 
 def speak(audio):
@@ -53,3 +60,14 @@ if __name__ == "__main__":
             result = wikipedia.summary(query, sentences=2)
             print(result)
             speak(f"According to wikipedia {result}")
+
+        elif "open google" in query:
+            webbrowser.open("google.com")
+        elif "open youtube" in query:
+            webbrowser.open("youtube.com")
+        elif "open spotify" in query:
+            webbrowser.open("spotify.com")
+        elif "open discord" in query:
+            webbrowser.open("discord.com")            
+            
+           

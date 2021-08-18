@@ -68,6 +68,17 @@ if __name__ == "__main__":
         elif "open spotify" in query:
             webbrowser.open("spotify.com")
         elif "open discord" in query:
-            webbrowser.open("discord.com")            
+            webbrowser.open("discord.com")  
+
+        elif "the time" in query:
+            strTime = datetime.datetime.strftime("%H:%M:%S")
+            speak(strTime)
+        elif "the date" in query:
+            strDate = datetime.date.today() 
+            speak(strDate)   
+
+
+        elif "quit" in query:
+            break        
             
            

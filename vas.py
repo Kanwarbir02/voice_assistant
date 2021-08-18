@@ -11,9 +11,6 @@ engine = pyttsx3.init()
 Path = "D:\Python\Selenium\chromedriver.exe"
 
 
-# driver2 = webdriver.Chrome(Path)
-
-
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()

@@ -1,6 +1,7 @@
 import pyttsx3 
 import speech_recognition as sr
 import datetime
+import wikipedia
 
 engine = pyttsx3.init()
 
@@ -40,4 +41,13 @@ def voiceInput():
     return query
 
 if __name__ == "__main__":
-    voiceInput()
+    greet()
+    while True:
+        query = voiceInput().lower()
+
+        if "wikipedia" in query:
+            speak("Searching Wikipedia")
+            query.replace("wikipeida", " ")
+            result = wikipedia.summary(query, sentences=2)
+            print(result)
+            speak(f"According to wikipedia {result}")

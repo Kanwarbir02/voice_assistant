@@ -7,6 +7,13 @@ import webbrowser
 
 engine = pyttsx3.init()
 
+
+Path = "D:\Python\Selenium\chromedriver.exe"
+
+
+# driver2 = webdriver.Chrome(Path)
+
+
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
@@ -43,6 +50,9 @@ def voiceInput():
         return "None" 
     return query
 
+
+
+
 if __name__ == "__main__":
     greet()
     while True:
@@ -56,13 +66,22 @@ if __name__ == "__main__":
             speak(f"According to wikipedia {result}")
 
         elif "open google" in query:
-            webbrowser.open("google.com")
+            driver = webdriver.Chrome(Path)
+            driver.get("https:/google.com")
+
         elif "open youtube" in query:
-            webbrowser.open("youtube.com")
+            driver = webdriver.Chrome(Path)
+            driver.get("https:/youtube.com")
+
         elif "open spotify" in query:
-            webbrowser.open("spotify.com")
+            driver = webdriver.Chrome(Path)
+            driver.get("https:/spotify.com")
+
         elif "open discord" in query:
-            webbrowser.open("discord.com")  
+            driver = webdriver.Chrome(Path)
+            driver.get("https:/discord.com")
+
+           
 
         elif "the time" in query:
             strTime = datetime.datetime.strftime("%H:%M:%S")
